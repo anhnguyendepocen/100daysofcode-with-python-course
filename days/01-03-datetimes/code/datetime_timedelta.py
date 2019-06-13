@@ -2,6 +2,7 @@
 
 from datetime import datetime
 from datetime import timedelta
+import calendar
 
 t = timedelta(days=4, hours=10)
 
@@ -37,3 +38,18 @@ today + eta
 
 str(today + eta)
 #'2018-02-19 20:55:19.197404'
+
+# leap year
+day = datetime(2016, 2, 28, 23, 0)
+str(day)
+str(day + timedelta(0, hours=2))
+
+# daylight savings
+day = datetime(2019, 3, 10, 1, 0)
+str(day)
+str(day + timedelta(0, hours=2))
+
+# get name of day
+day.weekday()
+day.strftime('%A')
+calendar.day_name[day.weekday()]
